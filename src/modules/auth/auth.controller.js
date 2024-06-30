@@ -39,7 +39,7 @@ export const register = asyncHandler(async (req, res, next) => {
 //activate account
 export const activateAccount = asyncHandler(async (req, res, next) => {
   const { token } = req.params;
-  const { email } = jwt.verify(token, process.env.TOKEN_SECRET);
+  const  email  = jwt.verify(token, process.env.TOKEN_SECRET);
   const user = await User.findOneAndUpdate({ email }, { isConfirmed: true });
   if (!user) return next(new Error("user not found "), { cause: 404 });
   return res.json({ success: true, message: "you can login now" });
