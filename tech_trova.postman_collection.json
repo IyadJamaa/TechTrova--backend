@@ -1,0 +1,518 @@
+{
+	"info": {
+		"_postman_id": "27c58b20-e6c3-482d-ab31-760a1727033c",
+		"name": "tech_trova",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29793257"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\":\"amira\",\r\n    \"email\":\"amirakassem855@gmail.com\",\r\n    \"password\":\"MyPassword123!\",\r\n    \"confirmPassword\":\"MyPassword123!\"\r\n \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://tech-snowy.vercel.app/auth/register",
+							"protocol": "https",
+							"host": [
+								"tech-snowy",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"amirakassem855@gmail.com\",\r\n    \"password\":\"MyPassword123!\"\r\n   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forget_code",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"email\":\"amirakassem855@gmail.com\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://tech-snowy.vercel.app/auth/forget_code",
+							"protocol": "https",
+							"host": [
+								"tech-snowy",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"auth",
+								"forget_code"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reset_password",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"amirakassem855@gmail.com\",\r\n    \"password\":\"Mynewpass!\",\r\n    \"confirmPassword\":\"Mynewpass!\",\r\n    \"forgetCode\":\"62267\"\r\n   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://tech-snowy.vercel.app/auth/reset_password",
+							"protocol": "https",
+							"host": [
+								"tech-snowy",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"auth",
+								"reset_password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "AMIRA__eyJhbGciOiJIUzI1NiJ9.YW1pcmFrYXNzZW04NTVAZ21haWwuY29t.tb37UYlDsyl9nICXsDtjgsNxp7ne4QbUsutymavZxp8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://tech-snowy.vercel.app/auth/logout",
+							"protocol": "https",
+							"host": [
+								"tech-snowy",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "soft_delete_user",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "token",
+								"value": "AMIRA__eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFtaXJha2Fzc2VtODU1QGdtYWlsLmNvbSIsImlhdCI6MTcxMzQyMzczN30.16ptItIHILawxtMFRG5izo_msuz_QxMlOiNQ9pWoLIU",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://tech-snowy.vercel.app/auth/soft_delete/66200ed244d166f0fe12b2ea",
+							"protocol": "https",
+							"host": [
+								"tech-snowy",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"auth",
+								"soft_delete",
+								"66200ed244d166f0fe12b2ea"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "AMIRA__eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFtaXJha2Fzc2VtODU1QGdtYWlsLmNvbSIsImlhdCI6MTcxMzQyMzczN30.16ptItIHILawxtMFRG5izo_msuz_QxMlOiNQ9pWoLIU",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_active_users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "AMIRA__eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFtaXJha2Fzc2VtODU1QGdtYWlsLmNvbSIsImlhdCI6MTcxMzQyMzczN30.16ptItIHILawxtMFRG5izo_msuz_QxMlOiNQ9pWoLIU",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://tech-snowy.vercel.app/auth/active_users",
+							"protocol": "https",
+							"host": [
+								"tech-snowy",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"auth",
+								"active_users"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "AMIRA__eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFtaXJha2Fzc2VtODU1QGdtYWlsLmNvbSIsImlhdCI6MTcxMzQyMzczN30.16ptItIHILawxtMFRG5izo_msuz_QxMlOiNQ9pWoLIU",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_deleted_users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "AMIRA__eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFtaXJha2Fzc2VtODU1QGdtYWlsLmNvbSIsImlhdCI6MTcxMzQyMzczN30.16ptItIHILawxtMFRG5izo_msuz_QxMlOiNQ9pWoLIU",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/auth/deleted_users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"deleted_users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "request_restore_user",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "token",
+								"value": "AMIRA__eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFtaXJha2Fzc2VtODU1QGdtYWlsLmNvbSIsImlhdCI6MTcxMzQyMzczN30.16ptItIHILawxtMFRG5izo_msuz_QxMlOiNQ9pWoLIU",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://tech-snowy.vercel.app/auth/restore_user",
+							"protocol": "https",
+							"host": [
+								"tech-snowy",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"auth",
+								"restore_user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update password",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "token",
+								"value": "AMIRA__eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFtaXJha2Fzc2VtODU1QGdtYWlsLmNvbSIsImlhdCI6MTcxOTU4NTY3Mn0.swfY-BTfExqfX90nPgrO6dkCH3itRdhkrf32aYQ9q_I",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"oldPassword\":\"MyPassword123!\",\r\n    \"newPassword\":\"amira123\",\r\n    \"confirmPassword\":\"amira123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/auth/update_password",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"update_password"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "get user data",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "AMIRA__eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFtaXJha2Fzc2VtODU1QGdtYWlsLmNvbSIsImlhdCI6MTcxOTc3MTc2Nn0.EnZdzCaWxxGAQ9N3R0hCSaEGztOzpONDALgwXa5VZUY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update profile",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "token",
+								"value": "AMIRA__eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFtaXJha2Fzc2VtODU1QGdtYWlsLmNvbSIsImlhdCI6MTcxOTU1NDI5OX0.UkHlpT-vsIsLP_0_yAxyplKWRzYx7kWJrLG9288R1p8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"userName\":\"amira updated\",\r\n\"phone\":\"01009999999\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://tech-snowy.vercel.app/user/update_profile",
+							"protocol": "https",
+							"host": [
+								"tech-snowy",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"user",
+								"update_profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "upload profile image",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "token",
+								"value": "AMIRA__eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFtaXJha2Fzc2VtODU1QGdtYWlsLmNvbSIsImlhdCI6MTcxOTU1NDI5OX0.UkHlpT-vsIsLP_0_yAxyplKWRzYx7kWJrLG9288R1p8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "profileImage",
+									"type": "file",
+									"src": "/C:/Users/Amera Qaseem/OneDrive/Pictures/Camera Roll/WIN_20240503_17_37_54_Pro.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://tech-snowy.vercel.app/user/upload_profile_image",
+							"protocol": "https",
+							"host": [
+								"tech-snowy",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"user",
+								"upload_profile_image"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "subscription",
+			"item": [
+				{
+					"name": "subscribe",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "AMIRA__eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFtaXJha2Fzc2VtODU1QGdtYWlsLmNvbSIsImlhdCI6MTcxOTU4NTY3Mn0.swfY-BTfExqfX90nPgrO6dkCH3itRdhkrf32aYQ9q_I",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://tech-snowy.vercel.app/sub/create-checkout-session",
+							"protocol": "https",
+							"host": [
+								"tech-snowy",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"sub",
+								"create-checkout-session"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "chat bot",
+			"item": [
+				{
+					"name": "send message",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "AMIRA__eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFtaXJha2Fzc2VtODU1QGdtYWlsLmNvbSIsImlhdCI6MTcxOTU4NTY3Mn0.swfY-BTfExqfX90nPgrO6dkCH3itRdhkrf32aYQ9q_I",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"message\":\"in software \",\"conversationId\": \"c1add2bd-babd-4659-9789-f006812d8ce0\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/chat/send-message",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"chat",
+								"send-message"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get messages",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "BEARER__eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFtaXJha2Fzc2VtODU1QGdtYWlsLmNvbSIsImlhdCI6MTcxOTU4NTY3Mn0.swfY-BTfExqfX90nPgrO6dkCH3itRdhkrf32aYQ9q_I",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://tech-snowy.vercel.app/chat/messages",
+							"protocol": "https",
+							"host": [
+								"tech-snowy",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"chat",
+								"messages"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
